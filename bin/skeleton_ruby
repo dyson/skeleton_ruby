@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/skeleton_ruby'
+
+app = SkeletonRuby::App.new
+
+app.run
