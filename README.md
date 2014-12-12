@@ -22,31 +22,31 @@ Installation
 ------------
 
 Clone the application
-```bash
+```
 $ git clone https://github.com/dyson/skeleton_ruby.git my_app
 ```
 
 Remove the git directory
-```bash
+```
 $ cd my_app
 $ rm -rf .git
 ```
 
 Review/modify the Gemfile and install
-```bash
+```
 $ bundle install --path=vendor/bundler
 ```
 
 Run the rename rake task (requires find, xargs, rename and sed) passing in your applications module name (CamelCase)
 
-```bash
+```
 $ bundle exec rake rename['MyApp']
 ```
 
 This will rename the skeleton_ruby files, references in files to skeleton_ruby and also the SkeletonRuby module appropriately.
 
 Review `.gitignore` and initialise
-```bash
+```
 $ git init
 $ git add .
 $ git commit -am 'Initial commit.'
@@ -57,7 +57,7 @@ Usage
 Having a quick look through the source code and running the below commands should provide you an idea of what is available and how it joins together.
 
 Included rake tasks
-```bash
+```
 $ bundle exec rake 
 rake db:create                # Creates the database from DATABASE_URL or config/database.yml for ...
 rake db:drop                  # Drops the database from DATABASE_URL or config/database.yml for th...
@@ -78,7 +78,7 @@ rake test                     # Run tests
 ```
 
 Some basic tests under the `test` folder
-```bash
+```
 $ bundle exec rake test
 Run options: --seed 29770
 
@@ -92,7 +92,7 @@ Finished in 0.004737s, 633.3162 runs/s, 633.3162 assertions/s.
 ```
 
 Example migration under `db/migrate`
-```bash
+```
 $ bundle exec rake db:migrate
 == 1 Schema: migrating ========================================================
 -- create_table(:users, {:force=>true})
@@ -101,7 +101,7 @@ $ bundle exec rake db:migrate
 ```
 
 Running the included `app.rb` under `lib/skeleton_ruby` via the executable in `bin`
-```bash
+```
 $ bundle exec bin/skeleton_ruby 
 #<OpenStruct something="something">
 Running application
