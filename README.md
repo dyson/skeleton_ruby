@@ -26,11 +26,10 @@ Clone the application
 $ git clone https://github.com/dyson/skeleton_ruby.git my_app
 ```
 
-Remove the git directory and initialise
+Remove the git directory
 ```bash
 $ cd my_app
 $ rm -rf .git
-$ git init
 ```
 
 Review/modify the Gemfile and install
@@ -45,6 +44,13 @@ $ bundle exec rake rename['MyApp']
 ```
 
 This will rename the skeleton_ruby files, references in files to skeleton_ruby and also the SkeletonRuby module appropriately.
+
+Review `.gitignore` and initialise
+```bash
+$ git init
+$ git add .
+$ git commit -am 'Initial commit.'
+```
 
 Usage
 -----
