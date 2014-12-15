@@ -9,9 +9,9 @@ class ConfigTest < ActiveSupport::TestCase
     end
 
     assert (
-      SkeletonRuby::Config.config.letter == 'a' and
-      SkeletonRuby::Config.config.number == '1' and
-      SkeletonRuby::Config.config.color == 'blue'
+      SkeletonRuby::Config.letter == 'a' and
+      SkeletonRuby::Config.number == '1' and
+      SkeletonRuby::Config.color == 'blue'
     )
   end
 end

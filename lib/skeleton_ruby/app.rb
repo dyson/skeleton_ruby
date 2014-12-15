@@ -7,7 +7,7 @@ module SkeletonRuby
 
     def run
       # Access configruation
-      puts SkeletonRuby::Config.config.inspect
+      puts SkeletonRuby::Config.something
 
       # Log something
       SkeletonRuby::Logger.log.info "Log this!"
