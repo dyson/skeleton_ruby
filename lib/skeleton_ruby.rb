@@ -19,5 +19,7 @@ require_relative '../config/application'
 # Require model
 require_relative 'skeleton_ruby/models/user'
 
+SkeletonRuby::Database.initialize
+
 module SkeletonRuby
 end

@@ -2,7 +2,6 @@ module SkeletonRuby
   class App
 
     def initialize
-      SkeletonRuby::Database.initialize
     end
 
     def run
