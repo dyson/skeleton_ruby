@@ -12,6 +12,11 @@ module SkeletonRuby
         @@log_path
       end
 
+      def self.respond_to_missing?(method, include_private_methods = false)
+        create if not defined? @@log
+        @@log.respond_to?(method) || super
+      end
+      
       private
 
       def create stdout = false, log_level = :error
