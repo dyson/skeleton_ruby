@@ -3,10 +3,6 @@ require 'ostruct'
 module SkeletonRuby
   module Config
 
-    def self.configure
-      yield(config) if block_given?
-    end
-
     def self.inspect
       config.inspect
     end

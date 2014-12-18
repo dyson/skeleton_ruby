@@ -12,13 +12,6 @@ module SkeletonRuby
         @@log_path
       end
 
-      def self.respond_to_missing?(method, include_private_methods = false)
-        create if not defined? @@log
-        @@log.respond_to?(method) || super
-      end
-      
-      private
-
       def create stdout = false, log_level = :error
         if stdout
           @@log = ::Logger.new STDOUT
@@ -30,10 +23,17 @@ module SkeletonRuby
         @@log.level = ::Logger.const_get log_level.to_s.upcase
       end
 
-      def method_missing(name, *args, &block)
+      def self.respond_to_missing?(method, include_private_methods = false)
         create if not defined? @@log
-        @@log.send(name, *args, &block)
+        @@log.respond_to?(method) || super
       end
+
+      private
+
+        def method_missing(name, *args, &block)
+          create if not defined? @@log
+          @@log.send(name, *args, &block)
+        end
 
     end
   end

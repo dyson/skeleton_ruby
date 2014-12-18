@@ -2,7 +2,7 @@ require_relative 'test_helper'
 
 class ConfigTest < ActiveSupport::TestCase
   test 'config' do
-    SkeletonRuby::Config.configure do |configuration|
+    SkeletonRuby::Config.tap do |configuration|
       configuration.letter = 'a'
       configuration.number = '1'
       configuration.color = 'blue'

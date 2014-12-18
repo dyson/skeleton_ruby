@@ -1,3 +1,3 @@
-SkeletonRuby::Config.configure do |configuration|
+SkeletonRuby::Config.tap do |configuration|
   configuration.something = 'something'
 end
