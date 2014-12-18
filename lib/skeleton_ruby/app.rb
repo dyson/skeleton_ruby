@@ -9,7 +9,7 @@ module SkeletonRuby
       puts SkeletonRuby::Config.something
 
       # Log something
-      SkeletonRuby::Logger.log.info "Log this!"
+      SkeletonRuby::Logger.info "Log this!"
 
       puts 'Running application'
 

@@ -3,7 +3,7 @@ require_relative 'test_helper'
 class LoggerTest < ActiveSupport::TestCase
   test 'logger' do
     log_message = 'Test log message'
-    SkeletonRuby::Logger.log.info log_message
+    SkeletonRuby::Logger.info log_message
 
     last_log_message = `tail -1 #{SkeletonRuby::Logger.log_path}`
 

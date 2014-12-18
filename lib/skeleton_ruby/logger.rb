@@ -3,22 +3,33 @@ require 'logger'
 
 module SkeletonRuby
   module Logger
+    class << self
 
-    @@log_path = File.expand_path "../../../log/#{ENV['APP_ENV']}.log", __FILE__
+      # Log path is only here for the example logger_test.
+      @@log_path = File.expand_path "../../../log/#{ENV['APP_ENV']}.log", __FILE__
 
-    def self.log
-      @@logger ||= create
-    end
-
-    def self.log_path
-      @@log_path
-    end
-
-    private
-      def self.create
-        FileUtils.touch log_path
-        ::Logger.new log_path
+      def log_path
+        @@log_path
       end
 
+      private
+
+      def create stdout = false, log_level = :error
+        if stdout
+          @@log = ::Logger.new STDOUT
+        else
+          FileUtils.touch log_path
+          @@log = ::Logger.new log_path
+        end
+
+        @@log.level = ::Logger.const_get log_level.to_s.upcase
+      end
+
+      def method_missing(name, *args, &block)
+        create if not defined? @@log
+        @@log.send(name, *args, &block)
+      end
+
+    end
   end
 end

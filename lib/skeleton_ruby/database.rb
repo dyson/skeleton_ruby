@@ -3,7 +3,7 @@ module SkeletonRuby
 
     def self.initialize
       # Set up active record Logger, load configuration and set database based on environment
-      ActiveRecord::Base.logger = SkeletonRuby::Logger.log
+      ActiveRecord::Base.logger = SkeletonRuby::Logger
 
       configuration_dir = File.expand_path('../../../config', __FILE__)
       database_configuration = YAML.load(File.read(File.join(configuration_dir, 'database.yml')))
