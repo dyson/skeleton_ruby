@@ -1,4 +1,4 @@
-skeleton_ruby
+Skeleton Ruby
 =============
 
 A bare bones ruby application providing you with basics like gem management, configuration, logging, testing and data storage.
@@ -6,7 +6,7 @@ A bare bones ruby application providing you with basics like gem management, con
 Why?
 ----
 
-Most applications I write in ruby, from little cron jobs and command line tools, to bigger more complex applications, all have some similar basic requirements. They all give or take need:
+Most applications I write in ruby, from little cron jobs and command line tools, to bigger more complex applications, all have some similar basic requirements. They all need, give or take:
 
 * Configuration (Ruby's built in OpenStruct)
 * Data storage (ActiveRecord gem with all Rake tasks available)
