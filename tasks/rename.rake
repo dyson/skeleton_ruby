@@ -7,7 +7,7 @@ task :rename, :new_module_name  do |t, args|
 
   puts "Replacing file/directory names containing skeleton_ruby with #{underscore_name}..."
 
-  Dir["**/*"].reject { |p| p['vendor'] || p['tasks/rename.rake'] }.reverse.each do |path|
+  Dir["**/*"].reject { |p| p['vendor'] }.reverse.each do |path|
 
     if FileTest.file? path
       # if we're working with a file, read its content and replace references to 'skeleton_ruby' or 'SkeletonRuby'
