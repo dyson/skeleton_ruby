@@ -37,7 +37,7 @@ Review/modify the Gemfile and install
 $ bundle install --path=vendor/bundler
 ```
 
-Run the rename rake task (requires find, xargs, rename and sed) passing in your applications module name (CamelCase)
+Run the rename rake task passing in your applications module name (CamelCase)
 
 ```
 $ bundle exec rake rename['MyApp']
